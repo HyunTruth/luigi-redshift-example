@@ -162,3 +162,6 @@ class ExampleTask(luigi.Task):
 if __name__ == "__main__":
     luigi.run()  # from cli, use `python example_etl.py ExampleTask`
     # if using external parameters, use `python example_etl.py ExampleTask --start-date 2018-01-01 --end-date 2018-02-02`
+    # For time-scheduling, use cronjobs & scripts
+    # add `--local-scheduler` to command if you want to run in a dev mode
+    # if using centralized scheduler, luigid daemon process must be running on the background
