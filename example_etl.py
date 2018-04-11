@@ -105,7 +105,7 @@ class ExampleToS3(luigi.Task):
 
     def requires(self):
         return [
-                ExampleTask(start_date=self.start_date, end_date=self.end_date, fn=self.fn)
+                LoadingTask(start_date=self.start_date, end_date=self.end_date, fn=self.fn)
         ]
 
 
@@ -117,7 +117,7 @@ class ExampleToS3(luigi.Task):
         logger.info('Uploading {} to {}'.format(self.input()[0].path, self.output().path))
         self.client.put(self.input()[0].path, self.output().path)
 
-class ExampleTask(luigi.Task):
+class LoadingTask(luigi.Task):
     """The main task to be performed, without any dependency. If there are dependencies, then requires() method might be added, as well"""
     start_date = luigi.DateParameter()
     end_date = luigi.DateParameter()
