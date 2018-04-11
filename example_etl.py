@@ -161,4 +161,4 @@ class ExampleTask(luigi.Task):
         
 if __name__ == "__main__":
     luigi.run()  # from cli, use `python example_etl.py ExampleTask`
-    # from cli, use `python example_etl.py ExampleTask`
+    # if using external parameters, use `python example_etl.py ExampleTask --start-date 2018-01-01 --end-date 2018-02-02`
